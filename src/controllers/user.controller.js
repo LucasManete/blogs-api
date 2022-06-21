@@ -8,4 +8,12 @@ if (message) {
 return res.status(statusCode).json({ token });
 };
 
-module.exports = { userAuthControler };
+const createUserController = async (req, res) => {
+  const { statusCode, token, message } = await userServices.createUserService(req.body);
+  if (message) {
+    return res.status(statusCode).json({ message });
+  }
+  return res.status(statusCode).json({ token });
+};
+
+module.exports = { userAuthControler, createUserController };
