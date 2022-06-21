@@ -7,5 +7,6 @@ const validadeAuth = require('../middlewares/validateJWT');
 
 router.post('/login', userController.userAuthControler);
 router.post('/user', validateUser, userController.createUserController);
-router.get('/user', validadeAuth, userController.findAllUsers);
+router.get('/user', validadeAuth, userController.findAllUsersController);
+router.get('/user/:id', validadeAuth, userController.findByIdController);
 module.exports = router;

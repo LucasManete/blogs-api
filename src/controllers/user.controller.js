@@ -16,9 +16,22 @@ const createUserController = async (req, res) => {
   return res.status(statusCode).json({ token });
 };
 
-const findAllUsers = async (_req, res) => {
+const findAllUsersController = async (_req, res) => {
   const users = await userServices.findAllUsers();
   return res.status(200).json(users);
 };
 
-module.exports = { userAuthControler, createUserController, findAllUsers };
+const findByIdController = async (req, res) => {
+  const { id } = req.params;
+  const { users, statusCode, message } = await userServices.findById(id);
+  if (message) {
+    return res.status(statusCode).json({ message });
+  }
+  return res.status(200).json(users);
+};
+
+module.exports = { 
+  userAuthControler,
+  createUserController,
+  findAllUsersController,
+  findByIdController };
