@@ -12,4 +12,5 @@ router.get('/user', validadeAuth, userController.findAllUsersController);
 router.get('/user/:id', validadeAuth, userController.findByIdController);
 
 router.post('/categories', validadeAuth, categoriesController.createCategory);
+router.get('/categories', validadeAuth, categoriesController.findAllCategoryController);
 module.exports = router;
