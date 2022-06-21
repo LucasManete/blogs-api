@@ -1,6 +1,10 @@
 const BlogPostSchema = (Sequelize, DataTypes) => {
   const blogPostTable = Sequelize.define("BlogPost", {
-    id: DataTypes.INTEGER,
+    id:{
+      type: DataTypes.INTEGER,
+      primaryKey:true,
+      autoIncrement:true,
+     },
     title: DataTypes.STRING,
     content: DataTypes.STRING,
     userId: DataTypes.INTEGER,

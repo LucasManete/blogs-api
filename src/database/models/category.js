@@ -1,7 +1,11 @@
 const categorieSchema = (Sequelize, DataTypes) => {
   const categorieTable = Sequelize.define("Category", {
-    id: DataTypes.Integer,
-    name: DataTypes.String,
+    id:{
+      type: DataTypes.INTEGER,
+      primaryKey:true,
+      autoIncrement:true,
+     },
+    name: DataTypes.STRING,
   });
   return categorieTable;
 }
