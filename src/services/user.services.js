@@ -35,4 +35,10 @@ const createUserService = async ({ displayName, email, password, image }) => {
     data: newUser,
   };
 };
-module.exports = { userAuthService, createUserService };
+
+const findAllUsers = async () => {
+  const users = await User.findAll({ attributes: { exclude: 'password' } });
+  return users;
+};
+
+module.exports = { userAuthService, createUserService, findAllUsers };

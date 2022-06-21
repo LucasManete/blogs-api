@@ -16,4 +16,9 @@ const createUserController = async (req, res) => {
   return res.status(statusCode).json({ token });
 };
 
-module.exports = { userAuthControler, createUserController };
+const findAllUsers = async (_req, res) => {
+  const users = await userServices.findAllUsers();
+  return res.status(200).json(users);
+};
+
+module.exports = { userAuthControler, createUserController, findAllUsers };
