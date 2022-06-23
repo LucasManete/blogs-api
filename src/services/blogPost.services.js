@@ -29,6 +29,25 @@ const getPkBlogPost = async (id) => {
   };
 };
 
+const updatPost = async ({ id, title, content, userId }) => {
+ const getByPk = await BlogPost.findByPk(id);
+ if (getByPk.userId !== userId) {
+   return { statusCode: 401, message: 'Unauthorized user' };
+ }
+ if (!title || !content) {
+  return { statusCode: 400, message: 'Some required fields are missing' };
+ }
+  await BlogPost.update({ title, content }, { where: { id } });
+  const findBlogByPk = await BlogPost.findByPk(id, {
+    include: [
+      { model: Category, as: 'categories', through: { attributes: [] } },
+    ],
+  });
+ return {
+  data: findBlogByPk,
+ };
+};
+
 module.exports = {
-  getAllBlogPost, getPkBlogPost,
+  getAllBlogPost, getPkBlogPost, updatPost,
 };

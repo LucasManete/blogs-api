@@ -17,7 +17,7 @@ const userAuthService = async ({ email, password }) => {
   }
   return {
     statusCode: 200,
-    token: token({ email }),
+    token: token({ email, id: newUser.id }),
   };
 };
 const createUserService = async ({ displayName, email, password, image }) => {
@@ -31,7 +31,7 @@ const createUserService = async ({ displayName, email, password, image }) => {
   const newUser = await User.create({ displayName, email, password, image });
   return {
     statusCode: 201,
-    token: token({ email, displayName }),
+    token: token({ email }),
     data: newUser,
   };
 };
