@@ -16,4 +16,5 @@ router.post('/categories', validadeAuth, categoriesController.createCategory);
 router.get('/categories', validadeAuth, categoriesController.findAllCategoryController);
 
 router.get('/post', validadeAuth, blogPostController.getAllBlogPost);
+router.get('/post/:id', validadeAuth, blogPostController.getByPkBlogPost);
 module.exports = router;
