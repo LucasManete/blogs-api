@@ -12,7 +12,7 @@ const BlogPostSchema = (Sequelize, DataTypes) => {
     updated: DataTypes.DATE
   });
   blogPostTable.associate = (models) => {
-    blogPostTable.belongsTo(models.User, {foreignKey: 'userId', as: 'Users'})
+    blogPostTable.belongsTo(models.User, {foreignKey: 'userId', as: 'user'})
   }
   return blogPostTable;
 }

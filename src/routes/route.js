@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/user.controller');
 const categoriesController = require('../controllers/categories.controller');
+const blogPostController = require('../controllers/blogPost.controller');
 const validateUser = require('../middlewares/userMiddleware');
 const validadeAuth = require('../middlewares/validateJWT');
 
@@ -13,4 +14,6 @@ router.get('/user/:id', validadeAuth, userController.findByIdController);
 
 router.post('/categories', validadeAuth, categoriesController.createCategory);
 router.get('/categories', validadeAuth, categoriesController.findAllCategoryController);
+
+router.get('/post', validadeAuth, blogPostController.getAllBlogPost);
 module.exports = router;
