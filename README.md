@@ -28,7 +28,7 @@ Ele consiste em uma API e um banco de dados para a produção de conteúdo para 
 
 - Modelagem do Bando de Dados
   
-## FEATURES
+## FEATURES:
 
 - [x] Migrations para as entidades User, Categories, BlogPosts, PostCategories
 - [x] Modelo 'User' em 'src/database/models/user.js' com as propriedades corretas
