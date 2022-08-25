@@ -1,14 +1,45 @@
-# Boas-vindas ao repositório do projeto API de Blogs!
+# BEM-VINDO AO Blogs API
 
-<details>
+## SOBRE:
 
-  Neste projeto você vai encontrar uma API e um banco de dados para a produção de conteúdo para um blog! 
+Este projeto foi desenvolvido como forma de praticar e desenvolver determinadas habilidades do módulo de backend, do curso de formação em programação da Trybe.
+Ele consiste em uma API e um banco de dados para a produção de conteúdo para um blog!
 
-  Este projeto foi desenvolvido com `Node.js` usando o pacote `sequelize` para fazer um `CRUD` de posts.
+#### Diagrama de Entidade-Relacionamento:
+ ![DER](./public/der.png)
 
-  1. Você encontrará os endpoints que estão conectados ao banco de dados seguindo os princípios do REST;
+## TECNOLOGIAS USADAS NO DESENVOLVIMENTO: 
 
-<br />
-</details>
+- Node.js
+  
+- sequelize
+  
+- JWT
 
-(Readme em Produção)
+- Eslint
+
+- Express
+
+- Docker
+
+## HABILIDADES:
+
+- Criação de API padrão Rest
+
+- Modelagem do Bando de Dados
+  
+## FEATURES
+
+- [x] Migrations para as entidades User, Categories, BlogPosts, PostCategories
+- [x] Modelo 'User' em 'src/database/models/user.js' com as propriedades corretas
+- [x] Endpoint POST /login
+- [x] Endpoint POST /user
+- [x] Endpoint GET /user
+- [x] Endpoint GET /user/:id
+- [x] Modelo 'Category' em 'src/database/models/category.js' com as propriedades corretas
+- [x] Endpoint POST /categories
+- [x] Modelo 'BlogPost' em 'src/database/models/blogPost.js' com as propriedades e associações corretas
+- [x] Modelo 'PostCategory' em 'src/database/models/postCategory.js' com as propriedades e associações corretas
+- [x] Endpoint GET /post
+- [x] Endpoint GET /post/:id
+- [x] Endpoint PUT /post/:id
